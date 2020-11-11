@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.custom.customimagerecyclerview.constant.Constants;
 import com.android.custom.customimagerecyclerview.view.ImageRecyclerView;
+import com.lzy.imagepicker.ImagePicker;
+import com.lzy.imagepicker.bean.ImageItem;
+import com.lzy.imagepicker.ui.ImageGridActivity;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int IMAGE_PICKER = 1001;
@@ -72,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /*private void showImages(ArrayList<ImageItem> images) {
+    private void showImages(ArrayList<ImageItem> images) {
         StringBuilder stringBuilder = new StringBuilder();
         if (images != null && images.size() > 0) {
             for (ImageItem imageItem : images) {
@@ -83,5 +88,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         tvResult.setText(stringBuilder.toString());
-    }*/
+    }
 }

@@ -28,5 +28,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //implementation project(path: ':imagepicker')
     //implementation project(path: ':customimagerecyclerview')
-    implementation 'com.github.gyadministrator.ImageRecyclerView:customimagerecyclerview:1.0'
+    implementation 'com.github.gyadministrator.ImageRecyclerView:customimagerecyclerview:1.1'
 }
