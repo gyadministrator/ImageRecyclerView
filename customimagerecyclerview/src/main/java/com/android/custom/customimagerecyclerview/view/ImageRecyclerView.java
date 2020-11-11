@@ -49,6 +49,7 @@ public class ImageRecyclerView extends RecyclerView {
     private ArrayList<String> mSelected = new ArrayList<>();
     private boolean isDelete;
     private ImagePicker imagePicker;
+    private boolean isShowLocal = false;
 
     public ImageRecyclerView(@NonNull Context context) {
         this(context, null);
@@ -69,7 +70,7 @@ public class ImageRecyclerView extends RecyclerView {
     }
 
     private void initPicker() {
-        if (imagePicker==null){
+        if (imagePicker == null) {
             ImagePicker imagePicker = ImagePicker.getInstance();
             imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
             imagePicker.setShowCamera(true);  //显示拍照按钮
@@ -118,16 +119,24 @@ public class ImageRecyclerView extends RecyclerView {
                 }
             }
         }
-        if (uploadListener!=null){
+        if (uploadListener != null) {
             uploadListener.uploadFilesListener(mSelected);
         }
-        //initRecycler();
+        if (isShowLocal) {
+            initRecycler();
+        }
+    }
+
+    public void setShowLocal(boolean showLocal) {
+        isShowLocal = showLocal;
     }
 
     public void setImages(ArrayList<String> list) {
-        mSelected.clear();
-        mSelected.addAll(list);
-        initRecycler();
+        if (!isShowLocal) {
+            mSelected.clear();
+            mSelected.addAll(list);
+            initRecycler();
+        }
     }
 
     private void initRecycler() {
