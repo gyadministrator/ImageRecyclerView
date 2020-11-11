@@ -37,7 +37,7 @@ public class NetPicAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
             if (!TextUtils.isEmpty(path)) {
                 Glide.with(helper.getView(R.id.iv_icon).getContext()).load(path).into((ImageView) helper.getView(R.id.iv_icon));
             } else {
-                helper.setVisible(R.id.rl_content, false);
+                helper.setVisible(R.id.fl_content, false);
             }
         }
     }

@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvAlbum = findViewById(R.id.tv_album);
         tvResult = findViewById(R.id.tv_result);
         imageRecyclerView = findViewById(R.id.recycler);
+        imageRecyclerView.setShowLocal(true);
         tvCamera.setOnClickListener(this);
         tvAlbum.setOnClickListener(this);
     }

@@ -37,6 +37,7 @@
 
     <com.android.custom.customimagerecyclerview.view.ImageRecyclerView
         android:id="@+id/recycler"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

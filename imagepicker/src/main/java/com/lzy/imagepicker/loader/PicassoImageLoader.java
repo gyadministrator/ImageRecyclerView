@@ -28,8 +28,8 @@ public class PicassoImageLoader implements ImageLoader {
                 .load(Uri.fromFile(new File(path)))//
                 .placeholder(R.drawable.ic_default_image)//
                 .error(R.drawable.ic_default_image)//
-                .resize(width, height)//
-                .centerInside()//
+                //.resize(width, height)//
+                //.centerInside()//
                 .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)//
                 .into(imageView);
     }
@@ -38,8 +38,8 @@ public class PicassoImageLoader implements ImageLoader {
     public void displayImagePreview(Activity activity, String path, ImageView imageView, int width, int height) {
         Picasso.with(activity)//
                 .load(Uri.fromFile(new File(path)))//
-                .resize(width, height)//
-                .centerInside()//
+                //.resize(width, height)//
+                //.centerInside()//
                 .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)//
                 .into(imageView);
     }
