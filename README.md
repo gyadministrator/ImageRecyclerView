@@ -23,7 +23,7 @@ Android 上传图片的RecyclerView
     }
 
   dependencies {
-		    implementation 'com.github.gyadministrator.ImageRecyclerView:customimagerecyclerview:1.2'
+		    implementation 'com.github.gyadministrator.ImageRecyclerView:customimagerecyclerview:2.1'
 	}
 
 
