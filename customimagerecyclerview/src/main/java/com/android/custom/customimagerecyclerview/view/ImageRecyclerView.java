@@ -150,7 +150,7 @@ public class ImageRecyclerView extends RecyclerView {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 if (mSelected == null || mSelected.size() == 0) return;
                 if (itemClickListener != null) {
-                    itemClickListener.onItemClick(mSelected);
+                    itemClickListener.onItemClick(mSelected,position);
                 }
             }
         });
@@ -266,6 +266,6 @@ public class ImageRecyclerView extends RecyclerView {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(ArrayList<String> mSelected);
+        void onItemClick(ArrayList<String> mSelected,int position);
     }
 }
