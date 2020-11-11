@@ -111,16 +111,20 @@ public class ImageRecyclerView extends RecyclerView {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ArrayList<ImageItem> images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
+        ArrayList<String> list = new ArrayList<>();
         if (images != null && images.size() > 0) {
             for (ImageItem imageItem : images) {
                 if (imageItem != null) {
                     String path = imageItem.path;
-                    mSelected.add(path);
+                    list.add(path);
+                    if (isShowLocal) {
+                        mSelected.add(path);
+                    }
                 }
             }
         }
         if (uploadListener != null) {
-            uploadListener.uploadFilesListener(mSelected);
+            uploadListener.uploadFilesListener(list);
         }
         if (isShowLocal) {
             initRecycler();
@@ -150,7 +154,7 @@ public class ImageRecyclerView extends RecyclerView {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 if (mSelected == null || mSelected.size() == 0) return;
                 if (itemClickListener != null) {
-                    itemClickListener.onItemClick(mSelected,position);
+                    itemClickListener.onItemClick(mSelected, position);
                 }
             }
         });
@@ -266,6 +270,6 @@ public class ImageRecyclerView extends RecyclerView {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(ArrayList<String> mSelected,int position);
+        void onItemClick(ArrayList<String> mSelected, int position);
     }
 }
