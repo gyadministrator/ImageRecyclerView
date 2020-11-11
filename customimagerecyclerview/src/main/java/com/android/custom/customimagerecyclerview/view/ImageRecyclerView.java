@@ -261,6 +261,10 @@ public class ImageRecyclerView extends RecyclerView {
 
     private OnItemClickListener itemClickListener;
 
+    public void setItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
     public interface OnItemClickListener {
         void onItemClick(ArrayList<String> mSelected);
     }
