@@ -137,7 +137,6 @@ public class ImageRecyclerView extends RecyclerView {
 
     public void setImages(ArrayList<String> list) {
         if (!isShowLocal) {
-            mSelected.clear();
             mSelected.addAll(list);
             initRecycler();
         }
