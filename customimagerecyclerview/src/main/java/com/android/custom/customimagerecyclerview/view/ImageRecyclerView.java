@@ -121,7 +121,7 @@ public class ImageRecyclerView extends RecyclerView {
         if (uploadListener!=null){
             uploadListener.uploadFilesListener(mSelected);
         }
-        initRecycler();
+        //initRecycler();
     }
 
     public void setImages(ArrayList<String> list) {
